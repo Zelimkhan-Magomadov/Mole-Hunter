@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mole Hunter</string>
+    <string name="play">Play</string>
+    <string name="record">RECORD:</string>
+    <string name="time">Time</string>
+    <string name="points">Points</string>
+</resources>
