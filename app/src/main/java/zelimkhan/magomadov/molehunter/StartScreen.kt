@@ -22,10 +22,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.ramcosta.composedestinations.navigation.EmptyDestinationsNavigator
+import zelimkhan.magomadov.molehunter.destinations.GameScreenDestination
 import zelimkhan.magomadov.molehunter.ui.theme.MoleHunterTheme
 
+@Destination(start = true)
 @Composable
-fun StartScreen() {
+fun StartScreen(
+    destination: DestinationsNavigator = EmptyDestinationsNavigator
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -51,7 +58,9 @@ fun StartScreen() {
                 .align(Alignment.Center)
                 .width(200.dp)
                 .height(64.dp),
-            onClick = { },
+            onClick = {
+                destination.navigate(GameScreenDestination)
+            },
             border = BorderStroke(
                 width = 2.dp,
                 color = Color(0xFF08DF04)
